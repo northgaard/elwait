@@ -42,6 +42,8 @@
   (make-condition-variable elwait--mutex "elwait-condition-variable")
   "Condition variable used by elwait.")
 
+(defconst elwait-num-threads 2)
+
 (provide 'elwait)
 
 ;; Local Variables:
