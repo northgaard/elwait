@@ -44,6 +44,21 @@
 
 (defconst elwait-num-threads 2)
 
+(defun elwait--thread-worker ()
+  (with-mutex elwait--mutex
+    (while t
+      (condition-wait elwait--condition-variable))))
+
+(defun elwait--create-thread-pool ()
+  (mapcar (lambda (num)
+            (make-thread #'elwait--thread-worker
+                         (format "elwait-thread-%d" num)))
+          (number-sequence 1 elwait-num-threads)))
+
+(defvar elwait--thread-pool
+  (elwait--create-thread-pool)
+  "Thread pool used by elwait.")
+
 (provide 'elwait)
 
 ;; Local Variables:
