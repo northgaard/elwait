@@ -1,10 +1,10 @@
-;;; elwait.el --- Async/await with Emacs threads -*- lexical-binding: t -*-
+;;; elwait.el --- Async/await with threads -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2021 Sebastian Arlund Nørgaard
 
 ;; Author: Sebastian Arlund Nørgaard
-;; Keywords: async, await, emacs
-;; URL:
+;; Keywords: extensions, lisp
+;; URL: https://github.com/northgaard/elwait
 ;; Package-Version: 0
 ;; Package-Requires: ((emacs "27.1"))
 
