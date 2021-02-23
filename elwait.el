@@ -35,6 +35,13 @@
   :group 'lisp
   :prefix "elwait-")
 
+(defvar elwait--mutex (make-mutex "elwait-mutex")
+  "Mutex used by elwait.")
+
+(defvar elwait--condition-variable
+  (make-condition-variable elwait--mutex "elwait-condition-variable")
+  "Condition variable used by elwait.")
+
 (provide 'elwait)
 
 ;; Local Variables:
